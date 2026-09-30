@@ -1,5 +1,5 @@
 {
-  "name": "ComidaSwift POS",
+  "name": "ComidaSwift POS ",
   "site": {
     "installCommand": "npm install",
     "buildCommand": "npm run build",
