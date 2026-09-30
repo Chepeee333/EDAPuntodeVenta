@@ -1,0 +1,80 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "order_number": {
+      "type": "string",
+      "description": "N\u00famero de pedido"
+    },
+    "customer_name": {
+      "type": "string",
+      "description": "Nombre del cliente"
+    },
+    "items": {
+      "type": "array",
+      "description": "Productos del pedido",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "unit_price": {
+            "type": "number"
+          },
+          "subtotal": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "subtotal": {
+      "type": "number",
+      "description": "Subtotal del pedido"
+    },
+    "total": {
+      "type": "number",
+      "description": "Total del pedido"
+    },
+    "payment_amount": {
+      "type": "number",
+      "description": "Monto pagado por el cliente"
+    },
+    "change_amount": {
+      "type": "number",
+      "description": "Cambio devuelto al cliente"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pendiente",
+        "completado",
+        "cancelado"
+      ],
+      "default": "completado",
+      "description": "Estado del pedido"
+    },
+    "order_type": {
+      "type": "string",
+      "enum": [
+        "local",
+        "para_llevar",
+        "domicilio"
+      ],
+      "default": "local",
+      "description": "Tipo de pedido"
+    },
+    "delivery_address": {
+      "type": "string",
+      "description": "Direcci\u00f3n de entrega si es a domicilio"
+    }
+  },
+  "required": [
+    "order_number",
+    "items",
+    "total"
+  ]
+}

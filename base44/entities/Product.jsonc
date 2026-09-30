@@ -1,0 +1,42 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nombre del producto"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descripci\u00f3n del producto"
+    },
+    "price": {
+      "type": "number",
+      "description": "Precio del producto"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Comida",
+        "Bebida",
+        "Postre",
+        "Extra"
+      ],
+      "description": "Categor\u00eda del producto"
+    },
+    "available": {
+      "type": "boolean",
+      "default": true,
+      "description": "Si el producto est\u00e1 disponible"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "URL de imagen del producto"
+    }
+  },
+  "required": [
+    "name",
+    "price",
+    "category"
+  ]
+}
